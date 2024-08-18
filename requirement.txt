@@ -1,0 +1,14 @@
+# importing the dependencies
+streamlit==1.37.1
+tensorflow==2.10.0
+numpy==2.0.1
+pandas==2.2.2
+Pillow==10.4.0
+sqlite3
+os
+bcrypt
+from PIL import Image
+import io
+import matplotlib.pyplot as plt
+
+
