@@ -1,6 +1,6 @@
 # importing the dependencies
 streamlit==1.37.1
-tensorflow==2.17.0
+tensorflow
 numpy==2.0.1
 pandas==2.2.2
 Pillow==10.4.0
