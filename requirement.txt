@@ -1,14 +1,9 @@
 # importing the dependencies
-streamlit==1.37.1
-tensorflow
-numpy==2.0.1
-pandas==2.2.2
-Pillow==10.4.0
-sqlite3
-os
-bcrypt
+import streamlit as st
+import tensorflow as tf
+import numpy as np
+import sqlite3
+import os
+import bcrypt
 from PIL import Image
 import io
-import matplotlib.pyplot as plt
-
-
