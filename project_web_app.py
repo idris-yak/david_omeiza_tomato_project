@@ -413,7 +413,14 @@ Original file is located at
 #               st.markdown(f"<div class='faq-item'><p class='faq-question'>{faq['question']}</p><p class='faq-answer'>{faq['answer']}</p></div>", unsafe_allow_html=True)
 #
 
-!ngrok authtoken 2kLMxJl3nsdvne2si6i9U28Kh4W_7hXw2QAb4uRRur8zMm5o2
+import subprocess
+
+# Replace with your actual authtoken
+ngrok_auth_token = "2kLMxJl3nsdvne2si6i9U28Kh4W_7hXw2QAb4uRRur8zMm5o2"
+
+# Run the ngrok authtoken command
+subprocess.run(["ngrok", "authtoken", ngrok_auth_token])
+
 
 from pyngrok import ngrok
 
