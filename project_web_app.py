@@ -434,4 +434,8 @@ public_url = ngrok.connect(8501)
 # Print the public URL where your app is accessible
 print("Your Streamlit app is available at:", public_url)
 
-!streamlit run project_web_app.py --server.port 8501
+import subprocess
+
+# Run the Streamlit app
+subprocess.run(["streamlit", "run", "project_web_app.py", "--server.port", "8501"])
+
