@@ -2,7 +2,6 @@ streamlit
 streamlit-option-menu
 tensorflow
 numpy
-sqlite3==2.6.0
 bcrypt
 Pillow
 matplotlib
