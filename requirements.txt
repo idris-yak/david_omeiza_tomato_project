@@ -1,9 +1,6 @@
-streamlit
-streamlit-option-menu
+streamlit 
 tensorflow
 numpy
-bcrypt
-Pillow
-matplotlib
-pandas
-plotly
+os
+PILLOW 
+io
