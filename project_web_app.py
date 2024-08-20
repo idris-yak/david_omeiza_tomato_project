@@ -7,15 +7,16 @@ Original file is located at
     https://colab.research.google.com/drive/1z2YMI-FCFCVGd0NUIzU_NYa5tAft2hBv
 """
 
-!pip install pyngrok
+import subprocess
+import sys
 
-!pip install ngrok
+# List of libraries to install
+libraries = ["pyngrok", "ngrok", "streamlit"]
 
-! pip install streamlit-option-menu
+# Install each library
+for lib in libraries:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", lib])
 
-!pip install streamlit
-
-!pip install bcrypt
 
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile project_web_app.py
