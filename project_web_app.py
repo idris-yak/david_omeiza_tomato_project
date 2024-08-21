@@ -401,7 +401,10 @@ Original file is located at
 #       for faq in faqs:
 #           with st.container():
 #               st.markdown(f"<div class='faq-item'><p class='faq-question'>{faq['question']}</p><p class='faq-answer'>{faq['answer']}</p></div>", unsafe_allow_html=True)
-#
 
 
+import subprocess
+
+# Run the Streamlit app
+subprocess.run(["streamlit", "run", "project_web_app.py", "--server.port", "8501"])
 
