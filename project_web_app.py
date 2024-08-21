@@ -26,13 +26,8 @@ class_names = [
 ]
 
 @st.cache_resource
-def load_tflite_model(tflite_model_path):
-    # Load the TFLite model as a TFSMLayer
-    tflite_layer = TFSMLayer(tflite_model_path, call_endpoint='serving_default')
-    
-    # Wrap the TFSMLayer in a Keras Sequential model
-    model = tf.keras.Sequential([tflite_layer])
-    
+def load_keras_model(model_path):
+    model = tf.keras.models.load_model(model_path)
     return model
 
 # Define the tomato disease solution function
@@ -91,9 +86,11 @@ def predict(model, img):
         st.error(f"Prediction failed: {e}")
         return None, None, None
 
-# Path to your .tflite model
-model_path = 'model.tflite'
-model = load_tflite_model(model_path)
+# Specify the path to your .keras model
+model_path = '/content/drive/MyDrive/Colab Notebooks/Saved_models/Project_Improved_Model2.keras'
+
+# Load the model
+model = load_keras_model(model_path)
 
 st.sidebar.image("/content/drive/MyDrive/Logo.jpg", use_column_width=True)
 st.sidebar.title("Dashboard")
