@@ -25,10 +25,13 @@ class_names = [
     "southern blight"
 ]
 
-@st.cache_resource
 def load_keras_model(model_path):
-    model = tf.keras.models.load_model(model_path)
-    return model
+    try:
+        model = tf.keras.models.load_model(model_path)
+        return model
+    except Exception as e:
+        st.error(f"Error loading model: {e}")
+        raise e
 
 # Define the tomato disease solution function
 def tomato_disease_solution(disease):
