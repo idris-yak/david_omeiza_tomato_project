@@ -28,7 +28,7 @@ class_names = [
 
 @st.cache_data
 def load_model():
-    model_path = "/content/drive/MyDrive/Colab Notebooks/Saved_models/Project_Improved_Model2.keras"
+    model_path = "Project_Improved_Model2.keras"
     if not os.path.exists(model_path):
         raise FileNotFoundError(f"The model file was not found at: {model_path}")
     model = tf.keras.models.load_model(model_path)
