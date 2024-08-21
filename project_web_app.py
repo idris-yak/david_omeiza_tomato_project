@@ -1,6 +1,7 @@
 # Importing the dependencies
 import streamlit as st
 import tensorflow as tf
+from keras.layers import TFSMLayer
 import numpy as np
 import os
 from PIL import Image
@@ -24,12 +25,14 @@ class_names = [
     "southern blight"
 ]
 
-@st.cache_data
-def load_model():
-    model_path = "model.tflite"
-    if not os.path.exists(model_path):
-        raise FileNotFoundError(f"The model file was not found at: {model_path}")
-    model = tf.keras.models.load_model(model_path)
+@st.cache_resource
+def load_tflite_model(tflite_model_path):
+    # Load the TFLite model as a TFSMLayer
+    tflite_layer = TFSMLayer(tflite_model_path, call_endpoint='serving_default')
+    
+    # Wrap the TFSMLayer in a Keras Sequential model
+    model = tf.keras.Sequential([tflite_layer])
+    
     return model
 
 # Define the tomato disease solution function
@@ -88,8 +91,9 @@ def predict(model, img):
         st.error(f"Prediction failed: {e}")
         return None, None, None
 
-# Load the model once and reuse it
-model = load_model()
+# Path to your .tflite model
+model_path = 'model.tflite'
+model = load_tflite_model(model_path)
 
 st.sidebar.image("/content/drive/MyDrive/Logo.jpg", use_column_width=True)
 st.sidebar.title("Dashboard")
