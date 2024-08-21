@@ -7,17 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1z2YMI-FCFCVGd0NUIzU_NYa5tAft2hBv
 """
 
-import subprocess
-import sys
-
-# List of libraries to install
-libraries = ["pyngrok", "ngrok", "streamlit"]
-
-# Install each library
-for lib in libraries:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", lib])
-
-
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile project_web_app.py
 # 
@@ -414,28 +403,5 @@ for lib in libraries:
 #               st.markdown(f"<div class='faq-item'><p class='faq-question'>{faq['question']}</p><p class='faq-answer'>{faq['answer']}</p></div>", unsafe_allow_html=True)
 #
 
-import subprocess
 
-# Replace with your actual authtoken
-ngrok_auth_token = "2kLMxJl3nsdvne2si6i9U28Kh4W_7hXw2QAb4uRRur8zMm5o2"
-
-# Run the ngrok authtoken command
-subprocess.run(["ngrok", "authtoken", ngrok_auth_token])
-
-
-from pyngrok import ngrok
-
-# Kill any existing tunnels
-ngrok.kill()
-
-# Start a tunnel for an HTTP server running on port 8501
-public_url = ngrok.connect(8501)
-
-# Print the public URL where your app is accessible
-print("Your Streamlit app is available at:", public_url)
-
-import subprocess
-
-# Run the Streamlit app
-subprocess.run(["streamlit", "run", "project_web_app.py", "--server.port", "8501"])
 
