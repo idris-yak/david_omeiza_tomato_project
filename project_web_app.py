@@ -91,7 +91,7 @@ def predict(model, img):
 # Load the model once and reuse it
 model = load_model()
 
-st.sidebar.image("/content/drive/MyDrive/Logo.jpg", use_column_width=True)
+st.sidebar.image("Logo.jpg", use_column_width=True)
 st.sidebar.title("Dashboard")
 app_mode = st.sidebar.selectbox("Select Page", ["Home", "Prediction", "About", 'FAQ'])
 
@@ -141,7 +141,7 @@ if app_mode == "Home":
         unsafe_allow_html=True
     )
     # Display logo with styling
-    logo = Image.open("/content/drive/MyDrive/toma.jpg")
+    logo = Image.open("toma.jpg")
     st.image(logo, width=200, caption="Tomato Plant Disease Classification System", use_column_width=True)
 
     # Main header
