@@ -1,5 +1,3 @@
-%%writefile project_web_app.py
-
 # Importing the dependencies
 import streamlit as st
 import tensorflow as tf
