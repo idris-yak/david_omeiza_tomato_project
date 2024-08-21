@@ -406,5 +406,5 @@ Original file is located at
 import subprocess
 
 # Run the Streamlit app
-subprocess.run(["streamlit", "run", "project_web_app.py", "--server.port", "8501"])
+subprocess.run(["streamlit", "run", "project_web_app.py"])
 
