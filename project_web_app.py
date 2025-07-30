@@ -97,13 +97,12 @@ def predict(model, img):
 model = load_model()
 
 # Sidebar UI
-st.sidebar.image("Logo.jpg", use_column_width=True)
+st.sidebar.image("Logo.jpg", use_container_width=True)
 st.sidebar.title("Dashboard")
-page = st.sidebar.selectbox("Navigation", ["Home", "Prediction", "About", "FAQ"])
 
-# HOME PAGE
+# Home Page
 if page == "Home":
-    st.image("toma.jpg", width=200, caption="Tomato Disease Classifier", use_column_width=True)
+    st.image("toma.jpg", caption="Tomato Disease Classifier", use_container_width=True)
     st.header("Welcome to the Tomato Disease Classification System 🍅")
     st.markdown("""
     Use this tool to detect and manage tomato plant diseases using AI-powered image analysis.
