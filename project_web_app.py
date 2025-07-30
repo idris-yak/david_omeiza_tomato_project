@@ -99,6 +99,7 @@ model = load_model()
 # Sidebar UI
 st.sidebar.image("Logo.jpg", use_container_width=True)
 st.sidebar.title("Dashboard")
+page = st.sidebar.selectbox("Navigate", ["Home", "Prediction", "About", "FAQ"])
 
 # Home Page
 if page == "Home":
@@ -126,7 +127,7 @@ elif page == "Prediction":
         img = Image.open(uploaded_file)
 
     if img:
-        st.image(img, caption="Image Preview", use_column_width=True)
+        st.image(img, caption="Image Preview", use_container_width=True)
         if st.button("Predict"):
             with st.spinner("Analyzing..."):
                 label, confidence, solution = predict(model, img)
